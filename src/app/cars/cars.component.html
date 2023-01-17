@@ -1,0 +1,99 @@
+   <div class="operations">
+    <div class="row">
+     <div class="col-lg-4 data">
+      <form [formGroup]="carsForm">
+        <div class="modal-body">
+          <div class="mb-3 mt-3">
+            <label for="text" class="form-label">Cars*</label>
+            <select required class="form-select" id="sel1" name="sellist1" formControlName="CarName">
+              <option value="" disabled selected>Select your car</option>
+              <option value="Ferrari F12">Ferrari F12</option>
+              <option value="Enzo Ferrari">Enzo Ferrari</option>
+              <option value="Dino">Dino</option>
+              <option value="LaFerrari">LaFerrari</option>
+            </select>
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="text" class="form-label">City*</label>
+            <select class="form-select" id="sel1" name="sellist1" formControlName="City">
+              <option value="" disabled selected>Select your city</option>
+              <option value="Nagpur">Nagpur</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Bangalore">Bangalore</option>
+            </select>
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="text" class="form-label">State*</label>
+            <select class="form-select" id="sel1" name="sellist1" formControlName="State">
+              <option value="" disabled selected>Select your state</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Sikkim">Sikkim</option>
+            </select>
+           </div>
+          <div class="mb-3 mt-3">
+            <label for="text" class="form-label">Country*</label>
+            <select class="form-select" id="sel1" name="sellist1" formControlName="Country">
+              <option value="" disabled selected>Select your country</option>
+              <option value="India">India</option>
+              <option value="Canada">Canada</option>
+              <option value="Australia">Australia</option>
+              <option value="Belgium">Belgium</option>
+            </select>
+           </div>
+          <div class="mb-3 mt-3">
+            <label for="text" class="form-label">Contact No*</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text">+91</span>
+              <input type="number" class="form-control" placeholder="1234567890" formControlName="ContactNo">
+            </div>
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="text" class="form-label">Pincode*</label>
+            <input type="text" class="form-control" formControlName="Pincode">
+          </div>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-success" (click)="close()">Reset</button>
+           <button type="submit" class="btn btn-primary" (click)="submit()" 
+            *ngIf="isEditClicked==false" [disabled]="carsForm.invalid">Submit</button>
+           <button type="button" class="btn btn-primary" (click)="update0()" *ngIf="isEditClicked==true">update</button>
+         </div>
+      </form>
+      </div>
+      <div class="col-lg-8">
+       <h1>Cars Model</h1>
+       <table class="table table-sm text-center">
+        <thead>
+          <tr>
+            <th>Sr No.</th>        
+            <th>Cars</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Contact Number</th>
+            <th>Pincode</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of CarsData;let i = index">
+            <td>{{i+1}}</td>
+            <td>{{customer.CarName}}</td>
+            <td>{{customer.City}}</td>
+            <td>{{customer.State}}</td>
+            <td>{{customer.Country}}</td>
+            <td>{{customer.ContactNo}}</td> 
+            <td>{{customer.Pincode}}</td>
+            <td>
+              <i class='fas fa-edit' style="font-size:20px"     (click)="update(i)"></i> &NonBreakingSpace;
+              <i class="fa fa-trash-alt" style="font-size:18px" (click)="delete(i)"></i>
+           </td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    </div>

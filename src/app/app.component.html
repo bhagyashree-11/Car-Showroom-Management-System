@@ -1,0 +1,176 @@
+<div class="CarShowroom">
+  <header class="sticky-top">
+    <div class="logo">
+      <img src="../assets/image/ferrari logo (2).png">
+    </div>
+    <nav>
+      <ul>
+        <li routerLink="cars"><a>Cars</a></li>
+        <li routerLink="parts"><a>Parts</a></li>
+        <li routerLink="staff"><a>Staff</a></li>
+        <li routerLink="billing"><a>Billing</a></li>
+      </ul>
+    </nav>
+    <div class="user">
+      <button type="button" class="btn btn1"><a href="#">Log in</a></button>
+      <button type="button" class="btn btn2"><a href="#">Registration</a></button>
+    </div>
+  </header>
+
+ <div class="Middle">
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+      <!-- Indicators/dots -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      </div>
+  
+      <!-- The slideshow/carousel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+         <img src="../assets/image/img1.jpg" alt="Los Angeles" class="d-block" style="width:100%;height:100%;">
+         <div class="carousel-caption d-none d-md-block">
+           <h1>Ferrari 296 GTS</h1>
+           <p>Explore configurations  <i class='fas fa-chevron-right' style='font-size:24px;'></i></p>
+           <p>Web Special <i class='fas fa-chevron-right' style='font-size:24px;'></i><p>
+           <p><a href="#">ENQUIRE</a></p>
+         </div>
+       </div>
+       <div class="carousel-item">
+         <img src="../assets/image/img2.jpg" alt="Chicago" class="d-block" style="width:100%;height:100%;">
+         <div class="carousel-caption d-none d-md-block">
+           <h1>Ferrari roma</h1>
+           <p>Explore configurations  <i class='fas fa-chevron-right' style='font-size:24px;'></i></p>
+           <p>Web Special <i class='fas fa-chevron-right' style='font-size:24px;'></i><p>
+           <p class="btns"><a href="#">Enquire</a></p>
+         </div>
+       </div>
+      </div>
+  
+     <!-- Left and right controls/icons -->
+     <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+     <span class="carousel-control-prev-icon"></span>
+     </button>
+     <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+     <span class="carousel-control-next-icon"></span>
+     </button>
+   </div>
+ </div>
+
+ 
+ <router-outlet></router-outlet>
+
+
+
+ <div class="newModel">
+  <div class="heading6">
+    <h2>New Model Range</h2>
+ </div><br>
+  <div class="Model">
+    <div class="row" style="color:white;">
+      <div class="col-lg-3">
+        <img src="../assets/image/img4.jpg">
+        <h5>812 GTS</h5>
+        <p>The V12 Spider returns</p>
+      </div>
+      <div class="col-lg-3">
+        <img src="../assets/image/img5.jpg">
+        <h5>SF90 Spider</h5>
+        <p>Beyond imagination</p>
+      </div>
+      <div class="col-lg-3">
+        <img src="../assets/image/img6.jpg">
+        <h5>F8 Spider</h5>
+        <p>The evolution of the species</p>
+      </div>
+      <div class="col-lg-3">
+        <img src="../assets/image/img7.jpg">
+        <h5>Ferrari Portofino M</h5>
+        <p>A Voyage of rediscovery</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="service">
+  <!-- <div class="heading">
+    <h2>Services</h2>
+  </div><br> -->
+  <div class="ServiceCar">
+    <h1>A FORETASTE OF OUR AFTER SALES SERVICES</h1>
+   <div class="row">
+     <div class="col-lg-6">
+       <img src="../assets/image/serviceimg.jpg"><br><br>
+       <h6>Service</h6>
+       <h2>Book A Service</h2>
+       <p>Put your car in safe hands of our official Ferrari technical experts</p><br><br>
+       <a href="#"><i class='fas fa-chevron-right'></i>&NonBreakingSpace; Discover More</a>
+     </div>
+     <div class="col-lg-6">
+       <img src="../assets/image/serviceimg2.jpg"><br><br>
+       <h6>Maintainance</h6>
+       <h2>A Long Term Plan</h2>
+       <p>The exclusive and complementary service covers a 7 year period, serving as
+         proof<br> of the excellent quality of prancing horse cars.</p><br>
+         <a href="#"><i class='fas fa-chevron-right'></i>&NonBreakingSpace;Discover More</a>
+     </div>
+   </div>
+  </div>
+</div>
+</div>
+
+
+<footer>
+  <div class="footer-container">
+    <div class="footer">
+      <div class="footer-heading footer-1">
+        <h2>NEW MODEL RANGE</h2>
+        <a href="#">812 GTS</a>
+        <a href="#">SF90 Stradale</a>
+        <a href="#">F8 Tributo</a>
+        <a href="#">Ferrari Roma</a>
+        <a href="#">Special Series</a>
+        <a href="#">Icona Series</a>
+        <a href="#">296 GTS</a>
+      </div>
+
+      <div class="footer-heading footer-2">
+        <h2>OWNERS</h2>
+        <a href="#">Pre-Owned Ferrari</a>
+        <a href="#">Value Your Car</a>
+        <a href="#">Ferrari Approved</a>
+        <a href="#">812 Superfast</a>
+        <a href="#">Ferrari Classiche</a>
+        <a href="#">MyFerrari</a>
+      </div>
+
+      <div class="footer-heading footer-3">
+        <h2>ABOUT US</h2>
+        <a href="#">Our Dealership</a>
+        <a href="#">Our Team</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Work with Us</a>
+        <a href="#">Aftersales Programmes</a>
+        <a href="#">Book a Service</a>
+      </div>
+
+      <div class="footer-email-form">
+        <h2>Stay Connected</h2>
+        <p>Subscribe to get latest Modal<br> launches, offers, exclusive news.</p>
+        <input type="email" placeholder="Email" id="footer-email">&NonBreakingSpace;
+        <input type="submit" value="Sign Up" id="footer-email-btn"><br><br>
+        <i class='fab fa-facebook'></i>
+        <i class='fab fa-instagram'></i>
+        <i class='fab fa-youtube'></i>
+        <i class="fab fa-twitter-square"></i>
+        <i class="fab fa-google"></i>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- </div> -->

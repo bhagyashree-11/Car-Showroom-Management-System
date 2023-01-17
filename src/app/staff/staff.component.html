@@ -1,0 +1,75 @@
+<div class="operations">
+    <div class="row">
+     <div class="col-lg-4 data">
+      <form [formGroup]="staffForm">
+        <div class="modal-body">
+          <div class="mb-3 mt-3">
+            <label for="text"> Name*</label>
+            <input required type="text" class="form-control" id="name" placeholder="Enter Name" name="name" formControlName="Name">
+          </div>
+          <div class="mb-3">
+            <label for="Email">Post*</label>
+            <select class="form-select" id="sel1" name="sellist1" formControlName="Post">
+              <option value="" disabled selected>Post</option>
+              <option value="Finance Manager">Finance Manager</option>
+              <option value="Sales Manager">Sales Manager</option>
+              <option value="Car Detailer">Car Detailer</option>
+              <option value="Lot Manager">Lot Manager</option>
+              <option value="HR Consultant">HR Consultant</option>
+              <option value="Service Technecian">Service Technecian</option>
+              <option value="Parts Technecian">Parts Technecian</option>
+            </select>
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="text" class="form-label">Mobile*</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text">+91</span>
+              <input type="number" class="form-control" placeholder="1234567890" formControlName="Mobile">
+            </div>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">Gender:</label><br>
+            <input type="radio"  id="Male" name="Gender" value="Male" formControlName="Gender">
+            <label for="Gender" class="form-label">Male</label>&NonBreakingSpace;
+            <input type="radio"  id="Female" name="Gender" value="Female" formControlName="Gender">
+            <label for="Gender" class="form-label"> Female</label> 
+          </div>
+        </div><div class="modal-footer">
+          <button type="button" class="btn btn-success" (click)="staffclose()">Reset</button>
+          <button type="submit" class="btn btn-primary" (click)="staffsubmit()" 
+           *ngIf="isEditClicked==false" [disabled]="staffForm.invalid">Submit</button>
+          <button type="button" class="btn btn-primary" (click)="staffupdate()" *ngIf="isEditClicked==true">update</button>
+        </div>
+      </form>
+      </div>
+      <div class="col-lg-8">
+       <h1>Staff List</h1>
+       <table class="table table-sm text-center">
+        <thead>
+          <tr>
+            <th>Sr No.</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Post</th>
+            <th>Mobile</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let staff of StaffData;let i = index">
+            <td>{{i+1}}</td>
+            <td>{{staff.Name}}</td>
+            <td>{{staff.Gender}}</td>
+            <td>{{staff.Post}}</td>
+            <td>{{staff.Mobile}}</td>
+            <td>
+              <i class='fas fa-edit' style="font-size:20px" (click)="update(i)"></i>
+               &NonBreakingSpace;
+              <i class="fa fa-trash-alt" style="font-size:18px" (click)="staffdelete(i)"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+   </div>
+ </div>
+</div>

@@ -1,0 +1,73 @@
+<div class="operations">
+    <div class="row">
+     <div class="col-lg-4 data">
+      <form [formGroup]="partsForm">
+        <div class="modal-body">
+          <div class="mb-3 mt-3">
+            <label for="text" class="form-label">Cars*</label>
+            <select required class="form-select" id="sel1" name="sellist1" formControlName="Name">
+             <option value="" disabled selected>Select car</option>
+             <option value="Ferrari F12">Ferrari F12</option>
+             <option value="Enzo Ferrari">Enzo Ferrari</option>
+             <option value="Dino">Dino</option>
+             <option value="Assistant Trasurer">LaFerrari</option>
+           </select>
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="text" class="form-label">Modal No.*</label>
+            <select class="form-select" id="sel1" name="sellist1" formControlName="ModalNo">
+             <option value="" disabled selected>Select car ModalNo.</option>
+             <option value="F12">F12</option>
+             <option value="F40">F40</option>
+             <option value="F355">F355</option>
+             <option value="F512">F512</option>
+           </select>
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="text" class="form-label">Parts*</label>
+            <select class="form-select" id="sel1" name="sellist1" formControlName="Parts">
+             <option value="" disabled selected>Select car parts</option>
+             <option value="Engine">Engine</option>
+             <option value="Battery">Battery</option>
+             <option value="Clutch">Clutch</option>
+             <option value="Brake">Brake</option>
+           </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" (click)="partclose()">Reset</button>
+          <button type="submit" class="btn btn-primary" (click)="partsubmit()" 
+           *ngIf="isEditClicked==false" [disabled]="partsForm.invalid">Submit</button>
+          <button type="button" class="btn btn-primary" (click)="partupdate()" *ngIf="isEditClicked==true">update</button>
+        </div>
+      </form>
+      </div>
+      <div class="col-lg-8">
+       <h1>Car Parts</h1>
+       <table class="table table-sm text-center">
+        <thead>
+          <tr>
+            <th>Sr No.</th>
+            <th>Cars</th>
+            <th>Modal No.</th>
+            <th>Parts</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let car of PartsData;let i = index">
+            <td>{{i+1}}</td>
+            <td>{{car.Name}}</td>
+            <td>{{car.ModalNo}}</td>
+            <td>{{car.Parts}}</td>
+            <td>
+              <i class='fas fa-edit' style="font-size:20px" (click)="update(i)"></i>
+               &NonBreakingSpace;
+              <i class="fa fa-trash-alt" style="font-size:18px" (click)="partdelete(i)"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+   </div>
+  </div>
+</div>

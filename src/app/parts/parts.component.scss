@@ -1,0 +1,67 @@
+.table{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px 8px 6px 6px;
+    overflow: hidden;
+ }
+ .table thead tr{
+    color: black;
+    font-size: 19px;
+ }
+ .table tbody{
+    font-size: 17px;
+ }
+ .table td button{
+ font-size:15px;
+ font-weight: 500;
+ }
+ /*Form*/
+ .data{
+    max-width: 350px;
+    border: 1px solid black;
+    border-radius: 15px 60px; 
+    margin:0 58px;
+    padding:0px 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+ .col-lg-8 h1{
+    font-size: 30px;
+    font-weight: 650;
+    margin: 30px 370px;
+    margin-top: 100px;
+    color: black;
+    font-style:algerian;
+    text-shadow:2px 2px lightgray; 
+    text-transform: uppercase;
+ }
+ 
+ /*modalform*/
+ .modal-header {
+    padding: 10px;
+  }
+  .modal-body{
+   padding: 12px;
+  }
+  .modal-body input{
+   padding: 5px;
+  }
+  .modal-body select{
+   padding: 5px;
+  }
+  .modal-body button{
+   padding: 5px 10px;
+  }
+  .modal-body label{
+   font-weight: bold;
+  }
+  .modal-body span{
+   padding: 0px 12px;
+  }
+  .modal-footer{
+   padding: 10px;
+  }
+  .modal-footer button{
+   padding: 5px 10px;
+   margin-right: 5px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+ 

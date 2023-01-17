@@ -1,0 +1,79 @@
+<!--******************************************** BillingList ******************************************** -->
+
+
+ <div class="operations">
+  <div class="row">
+   <div class="col-lg-4 data">
+    <form [formGroup]="billingForm">
+      <div class="modal-body">
+        <div class="mb-3 mt-3">
+          <label for="text" class="form-label">Cars*</label>
+          <select required class="form-select" id="sel1" name="sellist1"  formControlName="Car">
+           <option value="" disabled selected>Select car</option>
+           <option value="Ferrari F12">Ferrari F12</option>
+           <option value="Enzo Ferrari">Enzo Ferrari</option>
+           <option value="Dino">Dino</option>
+           <option value="LaFerrari">LaFerrari</option>
+           <option value="Ferrari 250 GTO">Ferrari 250 GTO</option>
+           <option value="Ferrari F430">Ferrari F430</option>
+         </select>
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="text">Customer Name*</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" formControlName="CustomerName">
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="text">Booking Amount*</label>
+          <input type="text" class="form-control" id="name" placeholder="Amount" name="name" formControlName="BookingAmount">
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="text">Booked Date*</label>
+          <input type="date" class="form-control" id="name" name="name" formControlName="BookedDate">
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="text">Total Amount*</label>
+          <input type="text" class="form-control" id="name" placeholder="Total Amount" name="name" formControlName="TotalAmount">
+        </div>
+      </div>
+     <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="billingclose()">Reset</button>
+        <button type="submit" class="btn btn-primary" (click)="billingsubmit()" 
+        *ngIf="isEditClicked==false" [disabled]="billingForm.invalid">Submit</button> 
+        <button type="button" class="btn btn-primary" (click)="billingupdate()" *ngIf="isEditClicked==true">update</button>
+     </div>
+    </form>
+    </div>
+    <div class="col-lg-8">
+     <h1>Cars Model</h1>
+     <table class="table table-sm text-center">
+      <thead>
+        <tr>
+          <th>Sr No.</th>
+          <th>Cars</th>
+          <th>Customer</th>
+          <th>Booking Amount</th>
+          <th>Booked Date</th>
+          <th>Total Amount</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let billing of BillingData;let i = index">
+          <td>{{i+1}}</td>
+          <td>{{billing.Car}}</td>
+          <td>{{billing.CustomerName}}</td>
+          <td>{{billing.BookingAmount}}</td>
+          <td>{{billing.BookedDate}}</td>
+          <td>{{billing.TotalAmount}}</td>
+          <td>
+             <i class='fas fa-edit' style="font-size:20px" (click)="update(i)"></i>
+             &NonBreakingSpace;
+             <i class="fa fa-trash-alt" style="font-size:18px" (click)="billingdelete(i)"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
